@@ -4,3 +4,19 @@ use for creting to a diff schema than public
 public class Task {
     @Id @GeneratedValue(strategy = GenerationType.AUTO,generator = "sb_sequence")
     @SequenceGenerator(name = "sb_sequence",sequenceName = "task.sb_sequence")
+
+
+
+    --------------
+    TASK
+    @OneToMany(mappedBy = "id.task",cascade = CascadeType.ALL)
+    private List<SubTask> subTaskList ;
+
+    SUBTASK
+
+     @Id
+        private int subTaskId;
+        @ManyToOne
+        @Id
+        @JoinColumn(name="task_id", referencedColumnName="taskId")
+        private Task task;
