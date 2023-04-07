@@ -1,0 +1,6 @@
+use for creting to a diff schema than public
+
+@Table(name = "task",schema = "task")
+public class Task {
+    @Id @GeneratedValue(strategy = GenerationType.AUTO,generator = "sb_sequence")
+    @SequenceGenerator(name = "sb_sequence",sequenceName = "task.sb_sequence")
