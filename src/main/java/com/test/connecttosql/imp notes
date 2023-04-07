@@ -1,4 +1,4 @@
-use for creting to a diff schema than public
+use for creating to a diff schema than public
 
 @Table(name = "task",schema = "task")
 public class Task {
