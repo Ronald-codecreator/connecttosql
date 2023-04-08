@@ -1,21 +1,15 @@
 package com.test.connecttosql.entity;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-public class Task {
-    @Id @GeneratedValue
-    private int taskId;
+public class TaskRequest {
     private String title;
     private String description;
     private State state;
@@ -23,7 +17,6 @@ public class Task {
     private Date createdOn;
     private Date updatedOn;
     private String assignTo;
-    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<SubTask> subTaskList = new ArrayList<>();
+    private List<String> subTasks;
 
 }

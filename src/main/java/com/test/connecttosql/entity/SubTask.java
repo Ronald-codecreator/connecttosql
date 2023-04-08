@@ -10,14 +10,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "subtask")
 public class SubTask {
-    @Id
+    @Id @GeneratedValue
     private int subTaskId;
-    private int subTaskName;
-
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "task_id", referencedColumnName = "taskId")
-    @JsonIgnoreProperties("subTaskList")
+    private String description;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "task_id")
     private Task task;
+
 }
