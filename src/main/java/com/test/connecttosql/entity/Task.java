@@ -33,9 +33,8 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "task")
 public class Task {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue
     private int taskId;
     private String title;
     private String description;
@@ -44,7 +43,7 @@ public class Task {
     private Date createdOn;
     private Date updatedOn;
     private String assignTo;
-    @OneToMany(mappedBy = "task",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JsonIgnoreProperties("task")
-    private List<SubTask> subTaskList ;
+    @OneToMany(targetEntity = SubTask.class,cascade = CascadeType.ALL)
+    @JoinColumn(name ="task_id",referencedColumnName = "taskId")
+    private List<SubTask> subTaskList = new ArrayList<>();
 }
