@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -34,16 +35,30 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 public class Task {
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue(generator="my_seq")
+    @SequenceGenerator(name="my_seq",sequenceName="task_seq", allocationSize=1)
     private int taskId;
     private String title;
     private String description;
+    @Enumerated(EnumType.STRING)
     private State state;
+    @Enumerated(EnumType.STRING)
     private Priority priority;
-    private Date createdOn;
-    private Date updatedOn;
+    private LocalDateTime createdOn;
+    private LocalDateTime updatedOn;
     private String assignTo;
-    @OneToMany(targetEntity = SubTask.class,cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
     @JoinColumn(name ="task_id",referencedColumnName = "taskId")
     private List<SubTask> subTaskList = new ArrayList<>();
+
+    @PrePersist
+    public void setCreatedOn() {
+        this.createdOn = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void setUpdatedOn() {
+        this.updatedOn = LocalDateTime.now();
+    }
 }
