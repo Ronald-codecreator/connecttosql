@@ -20,4 +20,5 @@ public class SubTask {
     @JoinColumn(name ="task_id",referencedColumnName = "taskId")
     @JsonIgnoreProperties("subTaskList")
     private Task task;
+
 }

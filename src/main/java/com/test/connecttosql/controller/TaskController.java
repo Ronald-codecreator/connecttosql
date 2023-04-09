@@ -18,19 +18,18 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class TaskController {
     private TaskService taskService;
     private TaskRepository taskRepository;
 
-    @Autowired
     public TaskController(TaskService taskService, TaskRepository taskRepository) {
         this.taskService = taskService;
         this.taskRepository = taskRepository;
-    }
-
-    public TaskController() {
     }
 
     @GetMapping("/taskById/{id}")
