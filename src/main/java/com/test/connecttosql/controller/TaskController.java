@@ -2,7 +2,6 @@ package com.test.connecttosql.controller;
 
 import com.test.connecttosql.entity.SubTask;
 import com.test.connecttosql.entity.Task;
-//import com.test.connecttosql.repository.SubTaskRepository;
 import com.test.connecttosql.repository.TaskRepository;
 import com.test.connecttosql.service.TaskService;
 import jakarta.servlet.http.HttpServletResponse;

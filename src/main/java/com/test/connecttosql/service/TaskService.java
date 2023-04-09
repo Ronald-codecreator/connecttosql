@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class TaskService {
     private TaskRepository taskRepository;
+
     @Autowired
     public TaskService(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;

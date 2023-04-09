@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 //Requirement of Task Management application
 //        1. Add new task (task can have subtask as well)
@@ -36,8 +34,8 @@ import java.util.Set;
 @Entity
 public class Task {
     @Id
-    @GeneratedValue(generator="my_seq")
-    @SequenceGenerator(name="my_seq",sequenceName="task_seq", allocationSize=1)
+    @GeneratedValue(generator = "my_seq")
+    @SequenceGenerator(name = "my_seq", sequenceName = "task_seq", allocationSize = 1)
     private int taskId;
     private String title;
     private String description;
@@ -48,8 +46,8 @@ public class Task {
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
     private String assignTo;
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
-    @JoinColumn(name ="task_id",referencedColumnName = "taskId")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JoinColumn(name = "task_id", referencedColumnName = "taskId")
     private List<SubTask> subTaskList = new ArrayList<>();
 
     @PrePersist
