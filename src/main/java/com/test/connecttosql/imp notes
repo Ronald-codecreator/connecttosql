@@ -17,27 +17,3 @@ public class Task {
         @Id
         @JoinColumn(name="task_id", referencedColumnName="taskId")
         private Task task;
-
-
-
----------------------
-
-to change path of api
-package com.test.connecttosql.config;
-
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
-public class RestConfig extends RepositoryRestConfigurerAdapter {
-
-    @Override
-    public void configurePathMatch(PathMatchConfigurer configurer) {
-        configurer.setUseSuffixPatternMatch(false)
-                .setUseTrailingSlashMatch(false);
-    }
-
-    @Override
-    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-        config.setBasePath("/api");
-    }
-}
