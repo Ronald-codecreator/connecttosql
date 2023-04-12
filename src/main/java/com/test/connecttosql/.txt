@@ -1,8 +1,0 @@
-     "id":"",
-     "title":"",
-     "description":"",
-     "state":"",
-     "priority":"",
-     "createdOn":"",
-     "updatedOn":"",
-     "assignTo":""

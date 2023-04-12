@@ -1,6 +1,6 @@
-package com.test.connecttosql.repository;
+package com.test.TaskManagementSystem.repository;
 
-import com.test.connecttosql.entity.Task;
+import com.test.TaskManagementSystem.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

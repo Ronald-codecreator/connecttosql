@@ -1,4 +1,4 @@
-package com.test.connecttosql.entity;
+package com.test.TaskManagementSystem.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

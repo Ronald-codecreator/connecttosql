@@ -1,4 +1,4 @@
-package com.test.connecttosql.entity;
+package com.test.TaskManagementSystem.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;

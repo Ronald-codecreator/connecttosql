@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.test</groupId>
-	<artifactId>connecttosql</artifactId>
+	<artifactId>TaskManagementSystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>connecttosql</name>
-	<description>Demo project for Spring Boot</description>
+	<name>TaskManagementSystem</name>
+	<description>Demo project for Task Management</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -35,13 +35,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
